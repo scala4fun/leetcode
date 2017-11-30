@@ -1,0 +1,2 @@
+# leecode
+leecode for scala

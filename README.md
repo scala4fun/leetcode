@@ -1,2 +1,2 @@
-# leecode
-leecode for scala
+# leetcode
+leetcode for scala

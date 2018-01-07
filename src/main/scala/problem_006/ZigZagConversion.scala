@@ -22,7 +22,7 @@ package problem_006
   * convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
   *
   * 这道题目是一道随着row的变化找规律的题目,一个不在斜线上的规律，还有一个在斜线上的规律
-  *
+  *  scala
   */
 object ZigZagConversion {
   def main(args: Array[String]): Unit = {
@@ -33,17 +33,17 @@ object ZigZagConversion {
     numRows match {
       case 1 => s
       case n if n > 1 => {
-        val lengthPerCycle = 2*numRows - 2
-        val cycles = (s.length / lengthPerCycle) + 1
+        val lengthPerCycle = 2*numRows - 2  //周期性为 2n-2 个
+        val cycles = (s.length / lengthPerCycle) + 1  //多少个周期
         val sb = new StringBuilder
         for (i <- 0 until numRows) {
           for (cycle <- 0 until cycles) {
             // print full vertical
-            val col = (cycle*lengthPerCycle)+i
+            val col = (cycle*lengthPerCycle)+i   //周期乘以周期个数  +i
             if (col < s.length)
               sb.append(s(col))
             // print diagonal
-            val dia = ((cycle+1)*lengthPerCycle)-i
+            val dia = ((cycle+1)*lengthPerCycle)-i  //下一个周期减去i
             if (i != 0 && i < numRows - 1 && dia < s.length)
               sb.append(s(dia))
           }

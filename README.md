@@ -1,5 +1,5 @@
 # leetcode
-leetcode scala语言题解
+leetcode scala语言题解，目标: [leetcode](https://leetcode.com/problemset/all/)
 
 1. [Tow Sum](./src/main/scala/problem_001/TwoSum.scala) @羊三
 2. [Add Two Numbers](./src/main/scala/problem_002/AddTwoNumbers.scala) @羊三

@@ -63,7 +63,59 @@ object ThreeSum {
     res.toList
   }
 
+
   def threeSum_2(nums: Array[Int]): List[List[Int]] = {
+    // 待优化排序
+    util.Arrays.sort(nums)
+    val Array(zone_index_low, zone_index_high) = getZone(nums)
+    val res = new ListBuffer[List[Int]]
+    var i = 0
+    while (i < zone_index_high) {
+      // 避免重复
+      if (i == 0 || nums(i) != nums(i - 1)) {
+        var low = i + 1
+        var high = nums.length - 1
+        val sum = 0 - nums(i)
+        while (low < high && low < zone_index_high && high > zone_index_low) {
+          if (nums(low) + nums(high) == sum) {
+            res.append(List(nums(i), nums(low), nums(high)))
+            // 避免重复
+            while (low < high && nums(low) == nums(low + 1)) low += 1
+            while (low < high && nums(high) == nums(high - 1)) high -= 1
+          } else if (nums(low) + nums(high) < sum) {
+            // 避免重复
+            while (low < high && nums(low) == nums(low + 1)) low += 1
+            low += 1
+          } else {
+            // 避免重复
+            while (low < high && nums(high) == nums(high - 1)) high -= 1
+            high -= 1
+          }
+        }
+      }
+      i += 1
+    }
+    res.toList
+  }
+
+  def getZone(nums: Array[Int]): Array[Int] = {
+    var zone_index_high = nums.length - 1
+    var zone_index_low = 0
+
+    for (i <- nums.indices) {
+      if (nums(i) < 0) {
+        zone_index_low = i
+      }
+      if (nums(i) > 0) {
+        zone_index_high = i
+        return Array(zone_index_low, zone_index_high)
+      }
+    }
+
+    Array(zone_index_low, zone_index_high)
+  }
+
+  def threeSum_1(nums: Array[Int]): List[List[Int]] = {
     val sortNums = nums.sortBy(x => x)
 
     val res = new ListBuffer[List[Int]]

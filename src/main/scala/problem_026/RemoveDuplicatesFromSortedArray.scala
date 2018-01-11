@@ -27,6 +27,7 @@ object RemoveDuplicatesFromSortedArray {
     var len = 1
     for (i <- 1 until nums.length) {
       if (nums(i) != nums(i - 1)) {
+        nums(len) = nums(i)
         len += 1
       }
     }

@@ -14,3 +14,4 @@ leetcode scala语言题解，目标: [leetcode](https://leetcode.com/problemset/
  - [17. Letter Combinations Of A Phone Number](./src/main/scala/problem_017/LetterCombinationsOfAPhoneNumber.scala) @羊三
  - [19. Remove Nth Node From End Of List](./src/main/scala/problem_019/RemoveNthNodeFromEndOfList.scala) @羊三
  - [20. Valid Parentheses](./src/main/scala/problem_020/ValidParentheses.scala) @羊三
+ - [26. Remove Duplicates From Sorted Array](./src/main/scala/problem_026/RemoveDuplicatesFromSortedArray.scala) @羊三

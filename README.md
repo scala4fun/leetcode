@@ -8,6 +8,7 @@ leetcode scala语言题解，目标: [leetcode](https://leetcode.com/problemset/
  - [5. Longest Palindromic Substring](./src/main/scala/problem_005/LongestPalindromicSubstring.scala) @羊三
  - [11. Container With Most Water](./src/main/scala/problem_011/ContainerWithMostWater.scala) @羊三
  - [12. Integer To Roman](./src/main/scala/problem_012/IntegerToRoman.scala) @羊三
+ - [13. Roman To Integer](./src/main/scala/problem_013/RomanToInteger.scala) @羊三
  - [14. Longest Common Prefix](./src/main/scala/problem_014/LongestCommonPrefix.scala) @羊三
  - [15. 3Sum](./src/main/scala/problem_015/ThreeSum.scala) @羊三
  - [17. Letter Combinations Of A Phone Number](./src/main/scala/problem_017/LetterCombinationsOfAPhoneNumber.scala) @羊三

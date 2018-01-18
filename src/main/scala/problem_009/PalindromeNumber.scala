@@ -6,14 +6,20 @@ package problem_009
   */
 object PalindromeNumber {
   def main(args: Array[String]): Unit = {
-    isPalindrome("1221")
+    println(isPalindrome(1221))
   }
-  def isPalindrome(someNumber:String):Boolean = {
-    val len = someNumber.length;
-    for(i <- 0 until len/2) {
-      if(someNumber(i) != someNumber(len-i-1)) return false;
+
+  def isPalindrome(x: Int): Boolean = {
+    if (x < 0 || x % 10 == 0 && x !=0) return false
+    // 将前面一半位数的数值倒过来
+    var y = x
+    var tmp = 0
+    while (y > tmp) {
+      tmp = tmp * 10 + y % 10
+      y = y / 10
     }
-    return true;
+    // 位数为偶数 与 位数为奇数的情况
+    y == tmp || y == tmp / 10
   }
 
 }
